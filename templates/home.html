@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block title %}Home{% endblock title %}
 {% block content %}
@@ -7,6 +8,8 @@ Hi {{ user.username }}! You are {{ user.age }} years old.
             {% csrf_token %}
          <button type="submit" class="btn btn-link">Logout</button>
        </form>
+<p><a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">
+View all articles</a></p> <!-- new -->
 {% else %}
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">Log In</a> |
